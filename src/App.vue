@@ -1,14 +1,5 @@
 <template>
   <div id="app">
-    <div>
-      <p>
-        If Element is successfully added to this project, you'll see an
-        <code v-text="'<el-button>'"></code>
-        below
-      </p>
-      <el-button>el-button</el-button>
-      <el-button>el-bn</el-button>
-    </div>
     <router-view></router-view>
   </div>
 </template>
@@ -19,6 +10,18 @@ export default {
 }
 </script>
 
-<style lang='stylus'>
-
+<style scoped lang='stylus'>
+  body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+  #app
+    position absolute
+    top 0px
+    bottom 0px
+    width 100%
+    margin-left -7px
 </style>
