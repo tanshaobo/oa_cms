@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import {routerMode} from '@/config/env'
 // 页面部分
 const Organization = r => require.ensure([], () => r(require('@/page/Organization/Organization')), 'organization') // 组织架构
 const StaffInfo = r => require.ensure([], () => r(require('@/page/Organization/children/StaffInfo')), 'staffInfo') // 组织架构下员工信息
@@ -27,7 +27,7 @@ const router = new Router({
       component: OperateRecord
     }
   ],
-  mode: "history"//干掉地址栏里边的#号键
+  mode: routerMode
 })
 
 //  router.beforeEach((to, from, next) => {
