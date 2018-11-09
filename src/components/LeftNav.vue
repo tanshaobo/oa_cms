@@ -43,17 +43,21 @@
               <el-menu-item index="3-4">历史记录</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <el-menu-item index="2">
+          <el-menu-item index="4">
             <i class="el-icon-menu"></i>
             <span slot="title">人力资源</span>
           </el-menu-item>
-          <el-menu-item index="3">
+          <el-menu-item index="5">
             <i class="el-icon-document"></i>
-            <span slot="title">导航三</span>
+            <span slot="title">财务管理</span>
           </el-menu-item>
-          <el-menu-item index="4">
+          <el-menu-item index="6">
             <i class="el-icon-setting"></i>
-            <span slot="title">导航四</span>
+            <span slot="title">数据中心</span>
+          </el-menu-item>
+          <el-menu-item index="7">
+            <i class="el-icon-setting"></i>
+            <span slot="title">数据中心</span>
           </el-menu-item>
         </el-menu>
       </el-col>
