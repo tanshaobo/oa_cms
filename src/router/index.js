@@ -26,7 +26,7 @@ const router = new Router({
       path: '/Organization/OperateRecord',
       component: OperateRecord
     }
-  ],
+  ]
 })
 
 //  router.beforeEach((to, from, next) => {
