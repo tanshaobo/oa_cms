@@ -10,18 +10,26 @@
                 <div class="grid-content bg-purple">
                     <ul>
                         <li>
-                            <i class="el-icon-setting"></i>
-                            <span>设置</span>
+                            <a href="">
+                                <i class="el-icon-setting"></i>
+                                <span>设置</span>
+                            </a>
                         </li>
                         <li>
-                            <span>账户管理</span>
+                            <a href="">
+                                <span>账户管理</span>
+                            </a>
                         </li>
                         <li>
-                            <i class="el-icon-bell"></i>
+                            <a href="">
+                                <i class="el-icon-bell"></i>
+                            </a>
                         </li>
                         <li>
-                            <i class="el-icon-service"></i>
-                            <span>包租婆</span>
+                            <a href="">
+                                <i class="el-icon-service"></i>
+                                <span>包租婆</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
