@@ -27,7 +27,6 @@ const router = new Router({
       component: OperateRecord
     }
   ],
-  mode: "history"//干掉地址栏里边的#号键
 })
 
 //  router.beforeEach((to, from, next) => {
