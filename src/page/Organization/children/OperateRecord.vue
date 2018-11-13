@@ -1,5 +1,5 @@
 <template>
-  <div id='auth'>
+  <div id='OperateRecord'>
     <h1>OperateRecord Page</h1>
   </div>
 </template>
@@ -11,6 +11,6 @@ export default {
 </script>
 
 <style lang="stylus">
-#auth
+#OperateRecord
   border 1px solid red
 </style>

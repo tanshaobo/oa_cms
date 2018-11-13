@@ -17,7 +17,9 @@ export default {
   },
   methods: {
     getData () {
-     console.log (1)
+      this.$axios.get(testapi.url, null, res => {
+        console.log(res)
+      })
     }
   }
 }

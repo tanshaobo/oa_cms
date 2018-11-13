@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import {routerMode} from '@/config/env'
-// 页面部分
+
+const Main = r => require.ensure([], () => r(require('@/page/Main/Main')), 'mian') // 主结构
 const Organization = r => require.ensure([], () => r(require('@/page/Organization/Organization')), 'organization') // 组织架构
 const StaffInfo = r => require.ensure([], () => r(require('@/page/Organization/children/StaffInfo')), 'staffInfo') // 组织架构下员工信息
 const OperateRecord = r => require.ensure([], () => r(require('@/page/Organization/children/OperateRecord')), 'operateRecord') // 组织架构下历史记录
@@ -12,19 +13,29 @@ const router = new Router({
   routes: [
     {
       path: '',
-      redirect: '/Organization'
+      redirect: '/Main'
     },
     {
-      path: '/Organization',
-      component: Organization
-    },
-    {
-      path: '/Organization/StaffInfo',
-      component: StaffInfo
-    },
-    {
-      path: '/Organization/OperateRecord',
-      component: OperateRecord
+      path: '/Main',
+      component: Main,
+      children: [
+        {
+          path: '',
+          redirect: '/Organization'
+        },
+        {
+          path: '/Organization',
+          component: Organization
+        },
+        {
+          path: '/Organization/StaffInfo',
+          component: StaffInfo
+        },
+        {
+          path: '/Organization/OperateRecord',
+          component: OperateRecord
+        }
+      ]
     }
   ],
   mode: routerMode

@@ -50,13 +50,17 @@ const apiAxios = (method, url, params, success, failure) => {
     }
   })
 }
-const get = (url, params, success, failure) => { return apiAxios('GET', url, params, success, failure) }
-const post = (url, params, success, failure) => { return apiAxios('POST', url, params, success, failure) }
-const put = (url, params, success, failure) => { return apiAxios('PUT', url, params, success, failure) }
-const deleted = (url, params, success, failure) => { return apiAxios('DELETE', url, params, success, failure) }
-export {
-  get,
-  post,
-  put,
-  deleted
+export default{
+  get: function (url, params, success, failure) {
+    return apiAxios('GET', url, params, success, failure)
+  },
+  post: function (url, params, success, failure) {
+    return apiAxios('POST', url, params, success, failure)
+  },
+  put: function (url, params, success, failure) {
+    return apiAxios('PUT', url, params, success, failure)
+  },
+  delete: function (url, params, success, failure) {
+    return apiAxios('DELETE', url, params, success, failure)
+  }
 }
