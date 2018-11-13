@@ -48,6 +48,7 @@ export default {
 .el-main
   padding 0
   background #F5F6FA
+  position relative
 .el-container
   height 100%
 </style>

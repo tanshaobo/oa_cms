@@ -1,6 +1,5 @@
 <template>
-  <div id='origanization'>
-    <el-container>
+    <el-container id='origanization'>
       <el-header height="70px">
         <el-row>
           <el-col :span="6">
@@ -29,13 +28,25 @@
         </el-row>
       </el-header>
       <el-main>
-        
+            <div class="main-left grid-content">
+              <el-tree :data="structureTree" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+            </div>
+            <div class="main-right grid-content">
+              <div class="main-right-top">
+                <h4>技术部</h4>
+                <ul>
+                  <li></li>
+                </ul>
+              </div>
+              <div class="main-right-middle"></div>
+              <div class="main-right-bottom"></div>
+              <h1>Origanization components</h1>
+              <router-link to="/Organization/OperateRecord">历史记录</router-link>
+              <router-link to="/Organization/StaffInfo">人员信息</router-link>
+            </div>
       </el-main>
     </el-container>
-    <h1>Origanization components</h1>
-    <router-link to="/Organization/OperateRecord">历史记录</router-link>
-    <router-link to="/Organization/StaffInfo">人员信息</router-link>
-  </div>
+   
 </template>
 
 <script>
@@ -45,8 +56,34 @@
       return {
         restaurants: [],
         state4: '',
-        timeout: null
-      };
+        timeout: null,
+        structureTree: [{
+          label: '一级 1',
+          children: [{
+            label: '二级 1-1',
+            children: [{
+              label: '三级 1-1-1'
+            }]
+          }]
+        }, {
+          label: '一级 3',
+          children: [{
+            label: '二级 3-1',
+            children: [{
+              label: '三级 3-1-1'
+            }]
+          }, {
+            label: '二级 3-2',
+            children: [{
+              label: '三级 3-2-1'
+            }]
+          }]
+        }],
+        defaultProps: {
+          children: 'children',
+          label: 'label'
+        }
+      }
     },
     methods: {
       loadAll() {
@@ -73,6 +110,9 @@
       },
       handleSelect(item) {
         console.log(item);
+      },
+      handleNodeClick(data) {
+        console.log(data);
       }
     },
     mounted() {
@@ -96,4 +136,17 @@
         li
           display inline-block
           margin 0 20px
+  .el-main
+    height calc(100% - 110px)
+    position absolute
+    top 70px
+    width calc(100% - 40px)
+    background #FFFFFF
+    padding 0
+    margin 20px
+    .main-left 
+      width 340px
+      position absolute
+      height 100%
+      border-right 1px solid rgba(234,239,245,1)
 </style>
