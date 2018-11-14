@@ -35,7 +35,10 @@
               <div class='main-right-top'>
                 <h4>技术部</h4>
                 <ul>
-                  <li></li>
+                  <li><el-button>编辑</el-button></li>
+                  <li><el-button>新增子公司</el-button></li>
+                  <li><el-button>新增子部门</el-button></li>
+                  <li><el-button>删除</el-button></li>
                 </ul>
               </div>
               <div class='main-right-middle'></div>
