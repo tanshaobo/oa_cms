@@ -4,10 +4,8 @@
         <el-row>
           <el-col :span='6'>
             <div class='grid-content'>
-              <h3>
                 <span>组织架构</span>
                 <i></i>
-              </h3>
             </div>
           </el-col>
           <el-col :span='18'>
@@ -19,9 +17,9 @@
                   @select='handleSelect'>
               </el-autocomplete>
               <ul>
-                <li><i></i><span>导入</span></li>
-                <li><i></i><span>导出</span></li>
-                <li><i></i><span>操作记录</span></li>
+                <li><el-button>导入</el-button></li>
+                <li><el-button>导出</el-button></li>
+                <li><el-button>操作记录</el-button></li>
               </ul>
             </div>
           </el-col>
@@ -32,17 +30,28 @@
               <el-tree :data='structureTree' :props='defaultProps' @node-click='handleNodeClick'></el-tree>
             </div>
             <div class='main-right grid-content'>
-              <div class='main-right-top'>
-                <h4>技术部</h4>
-                <ul>
-                  <li><el-button>编辑</el-button></li>
-                  <li><el-button>新增子公司</el-button></li>
-                  <li><el-button>新增子部门</el-button></li>
-                  <li><el-button>删除</el-button></li>
-                </ul>
-              </div>
-              <div class='main-right-middle'></div>
-              <div class='main-right-bottom'></div>
+              <el-row class='main-right-top'>
+                <el-col :span='6' class='department-name'>技术部</el-col>
+                <el-col :span='18' class='operate-column'>
+                  <ul>
+                    <li><el-button>编辑</el-button></li>
+                    <li><el-button>新增子公司</el-button></li>
+                    <li><el-button>新增子部门</el-button></li>
+                    <li><el-button>删除</el-button></li>
+                  </ul>
+                </el-col>
+                <el-col :span='24'>负责公司互联网产品的研发、平台运营、数据分析等工作负责公司互联网产品的研发、平台运营、数据分析等工作</el-col>
+              </el-row>
+              <el-row class='main-right-middle'>
+                  <el-col :span='24'>
+                    <div class='grid-content'>下级部门</div>
+                  </el-col>
+                  <el-scrollbar></el-scrollbar>
+              </el-row>
+              <el-row class='main-right-bottom'>
+                <el-col :span='24'><div class='grid-content'>部门人员</div></el-col>
+                <el-scrollbar></el-scrollbar>
+              </el-row>
               <h1>Origanization components</h1>
               <router-link to='/Organization/OperateRecord'>历史记录</router-link>
               <router-link to='/Organization/StaffInfo'>人员信息</router-link>
@@ -148,6 +157,29 @@ export default {
     .main-left
       width 340px
       position absolute
+      left 0
+      top 0
       height 100%
       border-right 1px solid rgba(234,239,245,1)
+    .main-right
+      position absolute
+      width calc(100% - 340px)
+      height 100%
+      right 0
+      top 0
+      .main-right-top
+        .operate-column
+          text-align right
+          ul
+            margin 0
+            padding 0
+            li
+              display inline-block
+              list-style-type none
+      .main-right-middle
+        .el-scrollbar
+          max-height 200px
+      .main-right-bottom
+        .el-scrollbar
+          max-height calc(100% - 420px)
 </style>
